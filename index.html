@@ -12,7 +12,6 @@
       background-color: #f4f4f4;
       color: #333;
     }
-
     nav {
       background-color: #00796B;
       display: flex;
@@ -23,14 +22,12 @@
       top: 0;
       z-index: 1000;
     }
-
     nav .logo {
       color: white;
       font-weight: 600;
       font-size: 1.5rem;
       text-decoration: none;
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -38,18 +35,15 @@
       margin: 0;
       padding: 0;
     }
-
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
-
     nav ul li a:hover {
       color: #e0f2f1;
     }
-
     header {
       background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
       background-size: cover;
@@ -58,45 +52,37 @@
       padding: 4rem 2rem;
       text-align: center;
     }
-
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
-
     main {
       max-width: 1100px;
       margin: auto;
       padding: 2rem;
       background-color: white;
     }
-
     section {
       margin-bottom: 2.5rem;
     }
-
     h2 {
       color: #009688;
       margin-bottom: 1rem;
     }
-
     ul {
       list-style: square;
       padding-left: 1.5rem;
     }
-
     form {
       display: grid;
       gap: 1rem;
     }
-
     form input, form textarea {
       padding: 0.7rem;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-family: 'Montserrat', sans-serif;
     }
-
     form button {
       background-color: #009688;
       color: white;
@@ -107,29 +93,24 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
-
     form button:hover {
       background-color: #00796B;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
     }
-
     .gallery img {
       width: 100%;
       border-radius: 8px;
     }
-
     footer {
       text-align: center;
       background-color: #009688;
       color: white;
       padding: 1rem;
     }
-
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -144,7 +125,7 @@
     <a href="#" class="logo">TaxiBaliMunduk</a>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="bali-turism.html">Services</a></li>
       <li><a href="#booking">Booking</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -170,16 +151,6 @@
       </div>
     </section>
 
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Airport Transfers</li>
-        <li>Daily City Rides</li>
-        <li>Private Full-Day Tours</li>
-        <li>Group Transport</li>
-      </ul>
-    </section>
-
     <section id="booking">
       <h2>Book a Ride</h2>
       <form onsubmit="sendToWhatsApp(event)">
@@ -196,7 +167,7 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <p>WhatsApp: +62 857-3821-7365</p>
-      <p>Email:taxibalimunduk@gmail.com</p>
+      <p>Email: info@taxibalimunduk.com</p>
       <p>Instagram: <a href="https://instagram.com/taxibalimunduk" target="_blank">@taxibalimunduk</a></p>
     </section>
   </main>
@@ -214,11 +185,9 @@
       const datetime = document.getElementById("datetime").value;
       const passengers = document.getElementById("passengers").value;
       const phone = document.getElementById("phone").value;
-
-      const message = `Hello TaxiBaliMunduk! I would like to book a ride:\n\nName: ${name}\nPickup: ${pickup}\nDestination: ${destination}\nDate & Time: ${datetime}\nPassengers: ${passengers}\nContact Number: ${phone}`;
+      const message = `Hello TaxiBaliMunduk! I would like to book a ride:\\n\\nName: ${name}\\nPickup: ${pickup}\\nDestination: ${destination}\\nDate & Time: ${datetime}\\nPassengers: ${passengers}\\nContact Number: ${phone}`;
       const encodedMessage = encodeURIComponent(message);
       const whatsappNumber = "6285738217365";
-
       window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
     }
   </script>
