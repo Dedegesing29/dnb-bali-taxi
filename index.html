@@ -1,84 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BaliTaxiRide</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #009688; color: white; padding: 1rem; text-align: center; }
-    main { padding: 2rem; }
-    section { margin-bottom: 2rem; }
-    h2 { color: #00796B; }
-    form input, form textarea { width: 100%; padding: 0.5rem; margin-top: 0.5rem; margin-bottom: 1rem; }
-    form button { background-color: #009688; color: white; padding: 0.7rem 1.5rem; border: none; cursor: pointer; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BaliTaxiRide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      background-color: white;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: #009688;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    form input, form textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    form button {
+      background-color: #009688;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background-color: #00796B;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      background-color: #009688;
+      color: white;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to BaliTaxiRide</h1>
-    <p>Reliable, comfortable, and affordable taxi service in Bali</p>
-  </header>
+  <header>
+    <h1>BaliTaxiRide</h1>
+    <p>Reliable, comfortable, and affordable taxi service in Bali</p>
+  </header>
 
-  <main>
-    <section>
-      <h2>About Us</h2>
-      <p>We are a local taxi service in Bali offering safe and friendly rides across the island. English-speaking drivers, transparent pricing, and comfortable vehicles guaranteed.</p>
-    </section>
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>We are a local taxi service in Bali offering safe and friendly rides across the island. English-speaking drivers, transparent pricing, and comfortable vehicles guaranteed.</p>
+    </section>
 
-    <section>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Airport Transfers</li>
-        <li>Daily City Rides</li>
-        <li>Private Full-Day Tours</li>
-        <li>Group Transport</li>
-      </ul>
-    </section>
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1589880755282-4b158e0b174e" alt="Bali Temple">
+        <img src="https://images.unsplash.com/photo-1589739900709-8a7e55e6e295" alt="Ubud Rice Field">
+        <img src="https://images.unsplash.com/photo-1581322332711-7be6f888fc37" alt="Balinese Beach">
+      </div>
+    </section>
 
-    <section>
-      <h2>Book a Ride</h2>
-      <form onsubmit="sendToWhatsApp(event)">
-        <label>Name:<br><input type="text" name="name" id="name" required /></label><br>
-        <label>Pickup Location:<br><input type="text" name="pickup" id="pickup" required /></label><br>
-        <label>Destination:<br><input type="text" name="destination" id="destination" required /></label><br>
-        <label>Date & Time:<br><input type="datetime-local" name="datetime" id="datetime" required /></label><br>
-        <label>Passengers:<br><input type="number" name="passengers" id="passengers" min="1" required /></label><br>
-        <label>Contact Number:<br><input type="tel" name="phone" id="phone" required /></label><br>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+    <section>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Airport Transfers</li>
+        <li>Daily City Rides</li>
+        <li>Private Full-Day Tours</li>
+        <li>Group Transport</li>
+      </ul>
+    </section>
 
-    <section>
-      <h2>Contact Us</h2>
-      <p>WhatsApp: +62 857-3821-7365</p>
-      <p>Email: info@balitaxiride.com</p>
-      <p>Instagram: @balitaxiride</p>
-    </section>
-  </main>
+    <section>
+      <h2>Book a Ride</h2>
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+        <input type="text" name="pickup" id="pickup" placeholder="Pickup Location" required />
+        <input type="text" name="destination" id="destination" placeholder="Destination" required />
+        <input type="datetime-local" name="datetime" id="datetime" required />
+        <input type="number" name="passengers" id="passengers" placeholder="Number of Passengers" required />
+        <input type="tel" name="phone" id="phone" placeholder="Your Contact Number" required />
+        <button type="submit">Book via WhatsApp</button>
+      </form>
+    </section>
 
-  <footer>
-    &copy; 2025 BaliTaxiRide. All rights reserved.
-  </footer>
+    <section>
+      <h2>Contact Us</h2>
+      <p>WhatsApp: +62 857-3821-7365</p>
+      <p>Email: info@balitaxiride.com</p>
+      <p>Instagram: <a href="https://instagram.com/balitaxiride" target="_blank">@balitaxiride</a></p>
+    </section>
+  </main>
 
-  <script>
-    function sendToWhatsApp(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const pickup = document.getElementById("pickup").value;
-      const destination = document.getElementById("destination").value;
-      const datetime = document.getElementById("datetime").value;
-      const passengers = document.getElementById("passengers").value;
-      const phone = document.getElementById("phone").value;
+  <footer>
+    &copy; 2025 BaliTaxiRide. All rights reserved.
+  </footer>
 
-      const message = `Hello BaliTaxiRide! I would like to book a ride:\n\nName: ${name}\nPickup: ${pickup}\nDestination: ${destination}\nDate & Time: ${datetime}\nPassengers: ${passengers}\nContact Number: ${phone}`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappNumber = "6285738217365";
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const pickup = document.getElementById("pickup").value;
+      const destination = document.getElementById("destination").value;
+      const datetime = document.getElementById("datetime").value;
+      const passengers = document.getElementById("passengers").value;
+      const phone = document.getElementById("phone").value;
 
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
-    }
-  </script>
+      const message = `Hello BaliTaxiRide! I would like to book a ride:\n\nName: ${name}\nPickup: ${pickup}\nDestination: ${destination}\nDate & Time: ${datetime}\nPassengers: ${passengers}\nContact Number: ${phone}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappNumber = "6285738217365";
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+    }
+  </script>
 
 </body>
 </html>
